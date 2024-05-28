@@ -2,33 +2,34 @@
 #include<stdlib.h>
 
 struct node{
-int data ;
+int data;
 struct node *link;
-
+};
+struct node* addb(struct node *head, int n){
+struct node * ptr;
+ptr=(struct node*)malloc(sizeof(struct node));
+ptr->data=n;
+ptr->link=head;
+head=ptr;
+return head;
 };
 
-//adding an element at the end
-void add(struct node *head,int data)
-{
-    struct node *ptr,*temp;
-    temp=(struct node*)malloc(sizeof(struct node));
-    temp->data=data;
-    temp->link=NULL;
-    ptr=head;
-    while(ptr->link!=NULL){
-        ptr=ptr->link;
-    }
-    ptr->link=temp;
-
-}
-
 int main(){
-struct node *head=NULL;
+struct node *head;
 head=(struct node*)malloc(sizeof(struct node));
-head->data =47;
+head->data=45;
 head->link=NULL;
-add(head,77);
-add(head,45);
-add(head,67);
+struct node * bg;
+bg=(struct node*)malloc(sizeof(struct node));
+bg->data=89;
+bg->link=NULL;
+head->link=bg;
+int d=4;
+head=addb(head,d);
+bg=head;
+while(head->link!=NULL){
+printf("%d ",bg->data);
+bg=bg->link;
+}
 return 0;
 }
