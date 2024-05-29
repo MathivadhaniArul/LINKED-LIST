@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node{
+int data;
+struct node *link;
+};
+
+struct node *reverse(struct node *head){
+struct node *prev=NULL;
+struct node *nxt=NULL;
+while(head!=NULL){
+    prev=head->link;
+    head->link=nxt;
+    nxt=head;
+    head=prev;
+}
+head=nxt;
+return nxt;
+} ;
+
+
+int main(){
+    struct node *head;
+    head=malloc(sizeof(struct node));
+    head->data=78;
+    head->link=NULL;
+
+    struct node *current;
+    current=malloc(sizeof(struct node));
+    current->data=69;
+    current->link=NULL;
+    head->link=current;
+
+    current=malloc(sizeof(struct node));
+    current->data=57;
+    current->link=NULL;
+    head->link->link=current;
+
+head=reverse(head);
+struct node *ptr=head;
+printf("reversed sll : ");
+while(ptr!=NULL){
+    printf("%d ",ptr->data);
+    ptr=ptr->link;
+}
+
+return 0;
+}
