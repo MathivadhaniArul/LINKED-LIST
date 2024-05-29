@@ -11,7 +11,8 @@ struct node *ptr=head;
 struct node *a=malloc(sizeof(struct node));
 a->data=data;
 a->link=NULL;
-while(posn!=2){
+posn--;
+while(posn!=1){
     ptr=ptr->link;
     posn--;
 }
