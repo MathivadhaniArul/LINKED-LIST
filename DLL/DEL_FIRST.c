@@ -29,36 +29,23 @@ temp->prev=ptr;
 
 int main(){
 Node* head=malloc(sizeof(Node));
-int n,data;
-
-printf("Enter no. of elements u want add : ");
-scanf("%d",&n);
-if(n==0){
-head=NULL;
-}
-else{
-printf("Enter Element 1 : ");
-scanf("%d",&data);
-head=add_empty(head,data);
-for(int i=1;i<n;i++){
-printf("Enter Element %d : ",i+1);
-scanf("%d",&data);
-addAtEnd(head,data);
-}
-Node *ptr=head;
+head=add_empty(head,5);
+addAtEnd(head,10);
+addAtEnd(head,15);
+printf("\Before Deleting first Element : ");
+Node*ptr=head;
 while(ptr!=NULL){
-printf("%d ",ptr->data);
-ptr=ptr->next;
-}}
-
+    printf("%d " ,ptr->data);
+    ptr=ptr->next;
+}
 head=head->next;
 free(head->prev);
 head->prev=NULL;
 printf("\nAfter Deleting first Element : ");
-Node*ptr=head;
+ptr=head;
 while(ptr!=NULL){
-printf("%d ",ptr->data);
-ptr=ptr->next;
+    printf("%d " ,ptr->data);
+    ptr=ptr->next;
 }
 
 return 0;
