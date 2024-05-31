@@ -23,7 +23,7 @@ return newp;
 
 }
 
-void addatIntr(Node*tail,int data,int posn){
+Node* addatIntr(Node*tail,int data,int posn){
 Node* ptr=tail->next;
 Node* newp=malloc(sizeof(Node));
 while(posn!=1){
@@ -33,7 +33,9 @@ while(posn!=1){
 newp->data=data;
 newp->next=ptr->next;
 ptr->next=newp;
-
+if(ptr==tail)
+    tail=tail->next;
+return tail;
 }
 
 int main(){
@@ -41,7 +43,7 @@ Node* tail=malloc(sizeof(Node));
 tail=circular_ll(30);
 tail=addAtEnd(tail,40);
 tail=addAtEnd(tail,50);
-addatIntr(tail,45,2);
+tail=addatIntr(tail,45,2);
   
 Node* ptr=tail->next;
 do{
