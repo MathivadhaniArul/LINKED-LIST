@@ -24,6 +24,16 @@ return newp;
 
 Node* del_last(Node*tail){
 Node* ptr=tail->next;
+if(tail==NULL){
+printf("List is already empty ");
+}
+else if(tail->next==tail){
+        free(tail);
+        tail=NULL;
+    return tail;
+    }
+    else{
+Node* ptr=tail->next;
 while(ptr->next!=tail){
     ptr=ptr->next;
 }
@@ -31,6 +41,7 @@ ptr->next=tail->next;
 free(tail);
 tail=NULL;
 return ptr;
+    }
 
 }
 
