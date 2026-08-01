@@ -1,6 +1,6 @@
 # Mastering Linked Lists 
 
-A specialized repository tracking my deep dive into Linked List structures, pointer manipulations, and memory management, started during my first year of college to build a rock-solid foundation in software engineering.
+A specialized repository tracking my deep dive into Linked List structures, pointer manipulations, and memory management, started during my first year of college to build a solid foundation in software engineering.
 
 ## Repository Directory
 The repository is systematically organized by list architecture:
